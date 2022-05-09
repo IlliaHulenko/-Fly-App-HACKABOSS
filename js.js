@@ -8,7 +8,6 @@ const ClearInputValue = () => {
 };
 
 const toInput = flyForm.elements.to;
-console.log(toInput.value);
 
 //Date
 let today = new Date();
@@ -21,7 +20,6 @@ let nextDate = `${year}-${month}-${day}`;
 
 //Button in Form in index.html
 let button = document.getElementById("form");
-//console.log(button, "Hola");
 
 //API
 
@@ -74,36 +72,23 @@ const showDataAirlines = async () => {
 
   try {
     let getAllPrices = airlinesData.data.map((item) => item.price.total);
-    console.log(getAllPrices);
+    
     let minPrice = Math.min(...getAllPrices);
     
     const flytoShow = airlinesData.data.find(
       (item) => (item.price.total = minPrice)
-    );
-    console.log(flytoShow);
+    );    
 
     //API data
     //Departure
-    let departure = flytoShow.itineraries[0].segments[0].departure.iataCode;
-    console.log(
-      "departure : " + flytoShow.itineraries[0].segments[0].departure
-    );
-    let terminalDeparture =
-      flytoShow.itineraries[0].segments[0].departure.terminal;
-    console.log("terminalDeparture: " + terminalDeparture);
+    let departure = flytoShow.itineraries[0].segments[0].departure.iataCode;    
+    let terminalDeparture = flytoShow.itineraries[0].segments[0].departure.terminal;    
     let dateDeparture = flytoShow.itineraries[0].segments[0].departure.at;
-    console.log("dateDeparture: " + dateDeparture);
-
+    
     //Arrival
     let codeArrival = flytoShow.itineraries[0].segments[0].arrival.iataCode;
-    console.log("arrival: " + codeArrival);
-
-    let termianalArrival =
-      flytoShow.itineraries[0].segments[0].arrival.terminal;
-    console.log("termianalArrival: " + termianalArrival);
-
+    let termianalArrival = flytoShow.itineraries[0].segments[0].arrival.terminal;
     let dateArrival = flytoShow.itineraries[0].segments[0].arrival.at;
-    console.log("dateArrival: " + dateArrival);
 
     let priceTicket = document.createElement("p");
     let origin = document.createElement("p");
