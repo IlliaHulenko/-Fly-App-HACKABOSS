@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de vuelos</title> 
+    <link rel="stylesheet" href="styles/styles.css"> 
+</head>
+<body> 
+    <header>
+        <img  src="./images/airplanempty.png">  
+        <h1>FLY-APP-HACKABOOSS</h1>
+    </header> 
+    <main>  
+        <div class="container">
+            <div id="h2animation">
+                <h2 class="border">La busqueda de vuelos baratos </h2>  
+                <h2 class="wave">La busqueda de vuelos baratos </h2>  
+            </div>
+            
+            <form id="form" name="fly"> 
+                <label for="from">Salida de</label>
+                <input type="text" id="from" on placeholder="De donde" required minlength="3" maxlength="3">  
+                <label for="to">Llegada al</label>
+                <input type="text" id="to" placeholder="A donde" required maxlength="3">  
+                
+                <button id="button" type="submit"><span>Vuelos más baratos</span></button>
+            </form>  
+            <div class="fly-cart"></div>
+            <div class="error"></div>            
+        </div>
+    </main>
+    <footer>
+        <h6>Authores: Alexey Motin & Illia Hulenko</h6>
+        <a href="https://github.com/Lexadiaz120/Fly-App-HACKABOSS"><img src="./images/github-img.png">GitHub</a>
+        <div id="codeHeart">
+            <h6>Codding with</h6>        
+            <div id="heart"></div>
+        </div>        
+    </footer>    
+</body>  
+<script src="./js.js"></script>
+</html>
